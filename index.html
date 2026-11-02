@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assignment 6 - jQuery Detective & Party in Motion</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>The Party, 19:30 - 22:30</h1>
+    <div id="controls">
+      <div class="cases-buttons">
+        <button class="btn-case" data-case="1">Case 1</button>
+        <button class="btn-case" data-case="2">Case 2</button>
+        <button class="btn-case" data-case="3">Case 3</button>
+        <button class="btn-case" data-case="4">Case 4</button>
+        <button class="btn-case" data-case="5">Case 5</button>
+        <button class="btn-case" data-case="6">Case 6</button>
+        <button class="btn-case" data-case="7">Case 7</button>
+        <button class="btn-case" data-case="8">Case 8</button>
+        <button class="btn-case" data-case="9">Case 9</button>
+        <button class="btn-case" data-case="10">Case 10</button>
+        <button class="btn-case" data-case="11">Case 11</button>
+        <button class="btn-case" data-case="12">Case 12</button>
+        <button class="btn-case" data-case="13">Case 13</button>
+        <button class="btn-case" data-case="14">Case 14</button>
+        <button class="btn-case" data-case="15">Case 15</button>
+        <button class="btn-case" data-case="16">Case 16</button>
+        <button class="btn-case" data-case="17">Case 17</button>
+        <button class="btn-case" data-case="18">Case 18</button>
+        <button class="btn-case" data-case="19">Case 19</button>
+        <button class="btn-case" data-case="20">Case 20 (Thief)</button>
+        <button id="btn-clear">Clear Spotlight</button>
+      </div>
+    </div>
+    <div id="result-output">
+      <strong>Result: </strong><span id="result-text">Select a case to run investigation...</span>
+    </div>
+  </header>
+
+  <main id="house">
+    <div class="floor" data-floor="2">
+      <div class="floor-label">FLOOR 2</div>
+      <div class="room" id="balcony" data-room="Balcony">
+        <div class="room-header">
+          <h3>Balcony</h3>
+          <button class="btn-sort">Sort by time</button>
+        </div>
+        <div class="guests-container"></div>
+      </div>
+      <div class="room" id="hall" data-room="Hall">
+        <div class="room-header">
+          <h3>Hall</h3>
+          <button class="btn-sort">Sort by time</button>
+        </div>
+        <div class="guests-container"></div>
+      </div>
+    </div>
+
+    <div class="floor" data-floor="1">
+      <div class="floor-label">FLOOR 1</div>
+      <div class="room" id="kitchen" data-room="Kitchen">
+        <div class="room-header">
+          <h3>Kitchen</h3>
+          <button class="btn-sort">Sort by time</button>
+        </div>
+        <div class="guests-container"></div>
+      </div>
+      <div class="room" id="living-room" data-room="Living room">
+        <div class="room-header">
+          <h3>Living room</h3>
+          <button class="btn-sort">Sort by time</button>
+        </div>
+        <div class="guests-container"></div>
+      </div>
+    </div>
+  </main>
+
+  <div id="modal-overlay">
+    <div id="guest-modal">
+      <div class="modal-header">
+        <h3 id="modal-name">Guest Name</h3>
+        <span id="modal-close">&times;</span>
+      </div>
+      <div class="modal-body">
+        <p id="modal-time"></p>
+        <p id="modal-astu"></p>
+        <p id="modal-items"></p>
+        <p id="modal-color"></p>
+      </div>
+      <div class="modal-footer">
+        <h4>Move to:</h4>
+        <div id="move-buttons"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
