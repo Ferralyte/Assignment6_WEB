@@ -40,8 +40,8 @@ $(document).ready(function() {
       floor: 1,
       guests: [
         { name: "Daniel", color: "orange", time: "19:55", isAitu: true, items: ["glasses"] },
-        { name: "Zarina", color: "green", time: "21:10", isAitu: false, items: ["bag", "glasses"] },
-        { name: "Natasha", color: "yellow", time: "20:30", isAitu: true, items: ["crumbs"] },
+        { name: "Zarina", color: "green", time: "21:10", isAitu: false, items: ["bag", "glasses", "crumbs"] },
+        { name: "Natasha", color: "yellow", time: "20:30", isAitu: true, items: [] },
         { name: "Askar", color: "purple", time: "21:00", isAitu: true, items: ["bag"] },
         { name: "Inkar", color: "purple", time: "20:20", isAitu: false, items: ["bag"] }
       ]
@@ -171,7 +171,8 @@ $(document).ready(function() {
           return t > "21:00" && t < "21:30" && items.includes('crumbs') && !items.includes('cup');
         })
         .filter(function() {
-          return $(this).siblings('.guest-card[data-aitu="true"]').length > 0;
+          return $(this).prev('.guest-card[data-aitu="true"]').length > 0 ||
+                 $(this).next('.guest-card[data-aitu="true"]').length > 0;
         });
     }
   };
@@ -226,7 +227,6 @@ $(document).ready(function() {
     
     $("#modal-overlay").fadeIn(200);
 
-    // Устанавливаем стартовые позиции прямо поверх аватарки и плавно увеличиваем с fadeIn
     $modal.stop(true, true).css({
       top: avatarOffset.top,
       left: avatarOffset.left,
